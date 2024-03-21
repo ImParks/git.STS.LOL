@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+
+#mainz {
+	width: 80%; /* 전체 너비 조정 가능 */
+	margin: 0 auto;
+	padding: 20px;
+	max-width: 1500px; min-width : 500px;
+	background-color: #f8f9fa; /* 배경색 설정 가능 */
+	border-radius: 10px;
+	min-width: 500px;
+}
+
+/* 대화창 스타일 */
+.chat {
+	padding: 10px;
+	margin-bottom: 10px;
+
+    background-color: white;
+    width: 70%;
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 요소들을 수직 중앙에 정렬합니다.
+    align-items: flex-start; 요소들을 왼쪽 정렬합니다.
+}
+
+/* 어시스턴트 대화 스타일 */
+.assistantChat {
+	background-color: #007bff; /* 어시스턴트 대화창 배경색 */
+	color: #fff; /* 어시스턴트 대화창 글자색 */
+	padding: 10px;
+	border-radius: 10px;
+	position: relative;
+	margin: 10px;
+	align-self: flex-start;
+	max-width: 70%;
+}
+
+/* 사용자 대화 스타일 */
+.userChat {
+	background-color: #28a745; /* 사용자 대화창 배경색 */
+	color: #fff; /* 사용자 대화창 글자색 */
+	padding: 10px;
+	border-radius: 10px;
+	background-color: green;
+	position: relative;
+	margin: 10px;
+	align-self: flex-end;
+	max-width: 70%;
+}

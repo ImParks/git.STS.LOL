@@ -1,0 +1,57 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+    background-color:  yellow;
+  width: 1080px;
+}
+
+.header, .main, .footer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  background-color: green;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  background-color: lightgray;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.wide-box {
+  width: 150px;
+  height: 50px;
+  background-color: lightgray;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.main {
+  align-items: flex-start;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.triple-box {
+  display: flex;
+  justify-content: space-between;
+}
