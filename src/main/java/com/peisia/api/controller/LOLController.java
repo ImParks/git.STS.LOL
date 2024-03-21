@@ -1,8 +1,5 @@
 package com.peisia.api.controller;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.peisia.api.dto.SearchDto;
+import com.peisia.api.dto.lolDto.lol;
 import com.peisia.api.service.LolService;
 
 import lombok.Setter;
@@ -34,11 +32,13 @@ public class LOLController {
 			if (parts.length == 2) {
 					search.setUserName(parts[0]);
 					search.setUserTag(parts[1]);
+					lol LOL = service.UserInfo(search);
 				try {
 					m.addAttribute("User", search);
-					m.addAttribute("Level", service.UserInfo(search).getSummoner().getSummonerLevel());
-					m.addAttribute("championMastery", service.UserInfo(search).getChampionMastery());
-					m.addAttribute("matchID", service.UserInfo(search).getMatchID());
+					m.addAttribute("Level", LOL.getSummoner().getSummonerLevel());
+					m.addAttribute("championMastery", LOL.getChampionMastery());
+					m.addAttribute("LeagueEntry",LOL.getLeagueEntry());
+					m.addAttribute("MatchID", LOL.getMatchID());
 					nextPage = "/userSummoner";
 				} catch (NullPointerException e) {
 					m.addAttribute("User", search);

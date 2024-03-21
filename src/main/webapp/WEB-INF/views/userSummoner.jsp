@@ -30,11 +30,32 @@
 		</div>
 
 		<div id="main">
-			<div id="sidebar">
-				<div id="solo"></div>
-				<div id="box"></div>
-				<div id="box"></div>
-				<div id="wide-box"></div>
+			<div id="sidebar">	
+			
+				<div id="solo">
+				<c:choose>
+				<hr>
+					<c:when test="${LeagueEntry eq RANKED_SOLO_5x5}">
+					
+					</c:when>
+					<c:otherwise>
+						<p class="Unranked"></p>
+					</c:otherwise>
+				</c:choose>
+				</div>
+				<div id="flex">
+				
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				<div id="championMastery"></div>
+				<div id="paging"></div>
 			</div>
 			<div class="content">
 				<div class="box"></div>
