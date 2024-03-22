@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import com.peisia.api.dto.SearchDto;
 import com.peisia.api.dto.lolDto.Account;
 import com.peisia.api.dto.lolDto.ChampionMastery;
 import com.peisia.api.dto.lolDto.Summoner;
@@ -21,7 +22,6 @@ import com.peisia.api.dto.lolDto.matchTimeLineDto.MatchTimeLine;
 public class Util {
 
 	public final String API_KEY = "RGAPI-0b639431-7ec7-4092-9cae-3c1039c42aa9";
-	public final String PAG_COUNT = "20";
 	RestTemplate restTemplate;
 	HttpHeaders headers;
 	String respon;
@@ -142,11 +142,11 @@ public class Util {
 	}
 
 //																	현제 페이지 , 한페이지당 매치 수
-	public List<String> getMatchID(String puuid, int page) {
+	public List<String> getMatchID(SearchDto search) {
 		List<String> list = null;
 		restTemplate = new RestTemplate();
-		url = "https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/" + puuid + "/ids?start=" + page + "&count="
-				+ PAG_COUNT;
+		url = "https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/" + search.getPuuid() + "/ids?start=" +  search.getStart() + "&count="
+				+ search.getCount();
 		headers = new HttpHeaders();
 		headers.set("User-Agent",
 				"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36");

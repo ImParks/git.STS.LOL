@@ -53,7 +53,7 @@ public class LOLController {
 					m.addAttribute("championMastery", LOL.getChampionMastery());
 					m.addAttribute("LeagueEntry", LOL.getLeagueEntry());
 					m.addAttribute("queueType", queueType);
-					m.addAttribute("MatchID", LOL.getMatchID());
+					m.addAttribute("Match", LOL.getMatch());
 					nextPage = "/userSummoner";
 				} catch (NullPointerException e) {
 					m.addAttribute("User", search);

@@ -4,8 +4,10 @@ import lombok.Data;
 
 @Data
 public class SearchDto {
-private String gameNameTag = "";
- private String userName="";
- private String userTag="";
- private int page=0;
+	private String gameNameTag = "";
+	private String userName = "";
+	private String userTag = "";
+	private String puuid;
+	private int start = 0;
+	private int count = 20;
 }

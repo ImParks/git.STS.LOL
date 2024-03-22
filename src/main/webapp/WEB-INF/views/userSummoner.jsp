@@ -45,19 +45,69 @@
 									<div id="flex">자유랭크</div>
 								</c:when>
 								<c:when test="${queue == 0}">
-									<div class="Unranked">Unranked</div>
+									<div class="unranked">Unranked</div>
 								</c:when>
 							</c:choose>
 						</c:forEach>
-						<!--<div id="championMastery"></div>-->
-						<div id="paging"></div>
+						<div id="paging">여기에 시즌 판수 등 넣어둘꺼 아직은 안넣음</div>
 					</div>
 					<div class="content">
-						<div class="box"></div>
-						<div class="triple-box">
-							<div class="box"></div>
-							<div class="box"></div>
-							<div class="box"></div>
+						<div class="contentHeader">큐타입 설정하는거 만들곳</div>
+						<div class="matchInfoList">
+							<c:forEach var="matchInfo" items="${Match}">
+								<div class="matchLog">
+									<div class="matchLeft">
+										<div class="matchLeftTop">게임종류 + 몇시에 했는지</div>
+										<div class="matchLeftBot">승패 + 게임을 얼마나 했는지</div>
+									</div>
+									<div class="matchMide">
+										<div class="matchMideTop">
+											<div class="matchMideTopLeft">
+												<div class="myChampionIcon">
+													챔피언 아이콘 보이게
+													<div class="championLevel">챔피언 레벨 보이게</div>
+												</div>
+												<div class="spells">
+													<div class="spell">d키 스펠</div>
+													<div class="spell">f키 스펠</div>
+												</div>
+												<div class="roons">
+													<div class="roon">주 룬</div>
+													<div class="roon">부 룬</div>
+												</div>
+												<div class="score">
+													<div class="kda">
+														<p class="kill"></p>
+														<p class="slash"></p>
+														<p class="death"></p>
+														<p class="slash"></p>
+														<p class="assist"></p>
+													</div>
+													<div class="grade">
+														<p class="gradeFont">평점</p>
+													</div>
+												</div>
+											</div>
+											<div class ="matchMideTopRight">
+											<p class="killInvolvementRate"></p>
+											<p class="perMinuteCS"></p>
+											<p class="gameRankTier"></p>
+											</div>
+										</div>
+										<div id="mideBot">
+										<div id="itemList">
+											<div class="item_1"></div>
+											<div class="item_2"></div>
+											<div class="item_3"></div>
+											<div class="item_4"></div>
+											<div class="item_5"></div>
+											<div class="item_6"></div>
+											<div class="accessories"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</c:forEach>
 						</div>
 						<div class="wide-box"></div>
 					</div>

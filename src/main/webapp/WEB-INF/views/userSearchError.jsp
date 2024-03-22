@@ -14,32 +14,7 @@
 <link rel="stylesheet" href="${cp}/styles.css">
 </head>
 <body>
-	<div class="container">
-		<div class="header">
-			<div class="box"></div>
-			<div class="wide-box"></div>
-			<div class="box"></div>
-		</div>
-		<div class="main">
-			<div class="sidebar">
-				<div class="box"></div>
-				<div class="box"></div>
-				<div class="box"></div>
-				<div class="wide-box"></div>
-			</div>
-			<div class="content">
-				<div class="box"></div>
-				<div class="triple-box">
-					<div class="box"></div>
-					<div class="box"></div>
-					<div class="box"></div>
-				</div>
-				<div class="wide-box"></div>
-			</div>
-		</div>
-		<div class="footer">
-			<div class="wide-box"></div>
-		</div>
-	</div>
+에러에러
+
 </body>
 </html>
