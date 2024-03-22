@@ -14,57 +14,54 @@
 <link rel="stylesheet" href="${cp}/resources/styles.css">
 </head>
 <body>
-	<div id="container">
-		<div id="header">
-			<div id="headerLeft">
-				<div id="iconBox"></div>
-				<div id="gameNameTagBox">
-					<div id="NameBox"></div>
-					<div id="TagBox"></div>
+	<div id="top">
+		<div class="container">
+			<div id="header">
+				<div id="headerLeft">
+					<div id="iconBox"></div>
+					<div id=headerMideBox>
+						<div id="gameNameTagBox">
+							<div id="NameBox"></div>
+							<div id="TagBox"></div>
+						</div>
+						<div id="nameBox"></div>
+						<div id="updateBox"></div>
+					</div>
 				</div>
-				<div id="nameBox"></div>
-				<div id="updateBox"></div>
-			</div>
-			<div id="headerRight">
+				<div id="headerRight"></div>
 			</div>
 		</div>
-
-		<div id="main">
-			<div id="sidebar">	
-			
-				<div id="solo">
-				<c:choose>
-				<hr>
-					<c:when test="${LeagueEntry eq RANKED_SOLO_5x5}">
-					
-					</c:when>
-					<c:otherwise>
-						<p class="Unranked"></p>
-					</c:otherwise>
-				</c:choose>
+		<div id="bot">
+			<div class="container">
+				<div id="main">
+					<div id="sidebar">
+						<c:forEach var="queue" items="${queueType}">
+							<c:choose>
+								<hr>
+								<c:when test="${queue == 1}">
+									<div id="solo">솔로랭크</div>
+								</c:when>
+								<c:when test="${queue == 2}">
+									<div id="flex">자유랭크</div>
+								</c:when>
+								<c:when test="${queue == 0}">
+									<div class="Unranked">Unranked</div>
+								</c:when>
+							</c:choose>
+						</c:forEach>
+						<!--<div id="championMastery"></div>-->
+						<div id="paging"></div>
+					</div>
+					<div class="content">
+						<div class="box"></div>
+						<div class="triple-box">
+							<div class="box"></div>
+							<div class="box"></div>
+							<div class="box"></div>
+						</div>
+						<div class="wide-box"></div>
+					</div>
 				</div>
-				<div id="flex">
-				
-				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				<div id="championMastery"></div>
-				<div id="paging"></div>
-			</div>
-			<div class="content">
-				<div class="box"></div>
-				<div class="triple-box">
-					<div class="box"></div>
-					<div class="box"></div>
-					<div class="box"></div>
-				</div>
-				<div class="wide-box"></div>
 			</div>
 		</div>
 	</div>
