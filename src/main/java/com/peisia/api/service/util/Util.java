@@ -14,8 +14,8 @@ import org.springframework.web.client.RestTemplate;
 import com.peisia.api.dto.lolDto.Account;
 import com.peisia.api.dto.lolDto.ChampionMastery;
 import com.peisia.api.dto.lolDto.Summoner;
-import com.peisia.api.dto.lolDto.MatchDto.Match;
-import com.peisia.api.dto.lolDto.MatchTimeLineDto.MatchTimeLine;
+import com.peisia.api.dto.lolDto.matchDto.Match;
+import com.peisia.api.dto.lolDto.matchTimeLineDto.MatchTimeLine;
 
 @Component
 public class Util {
