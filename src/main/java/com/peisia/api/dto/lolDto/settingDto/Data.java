@@ -1,5 +1,5 @@
 
-package com.peisia.api.dto.lolDto.ChampionDto;
+package com.peisia.api.dto.lolDto.settingDto;
 
 import javax.annotation.Generated;
 
@@ -7,6 +7,5 @@ import javax.annotation.Generated;
 public class Data {
 
     public Aatrox aatrox;
-    public Ahri ahri;
 
 }

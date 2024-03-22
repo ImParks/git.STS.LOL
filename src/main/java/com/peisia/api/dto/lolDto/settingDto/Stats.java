@@ -1,10 +1,10 @@
 
-package com.peisia.api.dto.lolDto.ChampionDto;
+package com.peisia.api.dto.lolDto.settingDto;
 
 import javax.annotation.Generated;
 
 @Generated("jsonschema2pojo")
-public class Stats__1 {
+public class Stats {
 
     public Integer hp;
     public Integer hpperlevel;
@@ -16,10 +16,10 @@ public class Stats__1 {
     public Integer spellblock;
     public Float spellblockperlevel;
     public Integer attackrange;
-    public Float hpregen;
-    public Float hpregenperlevel;
+    public Integer hpregen;
+    public Integer hpregenperlevel;
     public Integer mpregen;
-    public Float mpregenperlevel;
+    public Integer mpregenperlevel;
     public Integer crit;
     public Integer critperlevel;
     public Integer attackdamage;

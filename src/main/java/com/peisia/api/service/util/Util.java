@@ -18,7 +18,7 @@ import com.peisia.api.dto.lolDto.MatchDto.Match;
 import com.peisia.api.dto.lolDto.MatchTimeLineDto.MatchTimeLine;
 
 @Component
-public class LolUtil {
+public class Util {
 
 	public final String API_KEY = "RGAPI-0b639431-7ec7-4092-9cae-3c1039c42aa9";
 	public final String PAG_COUNT = "20";

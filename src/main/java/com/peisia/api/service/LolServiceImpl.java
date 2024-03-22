@@ -8,7 +8,7 @@ import com.peisia.api.dto.SearchDto;
 import com.peisia.api.dto.userInfoDto;
 import com.peisia.api.dto.lolDto.lol;
 import com.peisia.api.mapper.Mapper;
-import com.peisia.api.service.util.LolUtil;
+import com.peisia.api.service.util.Util;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -20,7 +20,7 @@ public class LolServiceImpl implements LolService{
 	@Setter(onMethod_ = @Autowired)
 	private Mapper mapper;	
 	@Setter(onMethod_ = @Autowired)
-	private LolUtil util;	
+	private Util util;	
 
 	@Override
 	public userInfoDto searchUser(String search) {
