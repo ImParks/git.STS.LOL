@@ -1,7 +1,5 @@
 package com.peisia.api.controller;
 
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +25,6 @@ public class LOLController {
 	String nextPage;
 
 	@GetMapping("/userInfo")
-
 	public String UserInfo(SearchDto search, Model m) {
 		nextPage = "/home";
 		if (search.getGameNameTag().length() >= 1) {
@@ -38,6 +35,7 @@ public class LOLController {
 				lol LOL = service.UserInfo(search);
 				
 				//0일때 언랭크, 1일때 솔로랭크, 2 일때 자유랭크
+				System.out.println(LOL.getLeagueEntry().get(1));
 				int[] queueType = {0, 0};
 				for (LeagueEntry league : LOL.getLeagueEntry()) {
 					if (league.getQueueType().equals("RANKED_SOLO_5x5")) {
@@ -50,7 +48,6 @@ public class LOLController {
 				try {
 					m.addAttribute("User", search);
 					m.addAttribute("Level", LOL.getSummoner().getSummonerLevel());
-					m.addAttribute("championMastery", LOL.getChampionMastery());
 					m.addAttribute("LeagueEntry", LOL.getLeagueEntry());
 					m.addAttribute("queueType", queueType);
 					m.addAttribute("Match", LOL.getMatch());

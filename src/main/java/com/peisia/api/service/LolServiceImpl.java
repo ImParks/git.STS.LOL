@@ -37,7 +37,7 @@ public class LolServiceImpl implements LolService {
 
 			search.setPuuid(util.getPuuid(search.getUserName(), search.getUserTag()).getPuuid());
 			userInfo.setSummoner(util.getSummoner(search.getPuuid()));
-			userInfo.setChampionMastery(util.getChampionMastery(search.getPuuid()));
+//			userInfo.setChampionMastery(util.getChampionMastery(search.getPuuid()));
 			userInfo.setMatchID(util.getMatchID(search));
 			ArrayList<Match> matchList = new ArrayList<Match>();
 			for (String matchId : util.getMatchID(search)) {

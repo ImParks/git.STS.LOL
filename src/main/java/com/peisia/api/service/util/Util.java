@@ -21,9 +21,14 @@ import com.peisia.api.dto.lolDto.matchTimeLineDto.MatchTimeLine;
 @Component
 public class Util {
 
-	public final String API_KEY = "RGAPI-0b639431-7ec7-4092-9cae-3c1039c42aa9";
+	public final String API_KEY = "RGAPI-304e4c24-6df4-4e78-b892-8049cb39548f";
 	RestTemplate restTemplate;
 	HttpHeaders headers;
+	public final String UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36";
+	public final String AcceptLanguage = "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7";
+	public final String AcceptCharset = "application/x-www-form-urlencoded; charset=UTF-8";
+	public final String Origin = "https://developer.riotgames.com";
+	
 	String respon;
 	String url;
 	String matchID;
@@ -35,12 +40,10 @@ public class Util {
 		url = "https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/" + gameName + "/"
 				+ tag;
 		headers = new HttpHeaders();
-		headers.set("User-Agent",
-				"Mozilla/5.0(Windows NT 10.0; Win64; x64) AppleWebKit/537.36(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36");
-		headers.set("Accept-Language", "ko-KR, ko;q=0.9,en-US;q=0.8,en;q=0."
-				+ "7");
-		headers.set("Accept-Charset", "application/x-www-form-urlencoded; charset=UTF-8");
-		headers.set("Origin", "https://developer.riotgames.com");
+		headers.set("User-Agent",UserAgent);
+		headers.set("Accept-Language", AcceptLanguage);
+		headers.set("Accept-Charset", AcceptCharset);
+		headers.set("Origin", Origin);
 		headers.set("X-Riot-Token", API_KEY);
 		try {
 			ResponseEntity<Account> responseEntity = restTemplate.exchange(url, HttpMethod.GET,
@@ -73,11 +76,10 @@ public class Util {
 		restTemplate = new RestTemplate();
 		url = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/" + puuid;
 		headers = new HttpHeaders();
-		headers.set("User-Agent",
-				"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36");
-		headers.set("Accept-Language", "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7");
-		headers.set("Accept-Charset", "application/x-www-form-urlencoded; charset=UTF-8");
-		headers.set("Origin", "https://developer.riotgames.com");
+		headers.set("User-Agent",UserAgent);
+		headers.set("Accept-Language", AcceptLanguage);
+		headers.set("Accept-Charset", AcceptCharset);
+		headers.set("Origin", Origin);
 		headers.set("X-Riot-Token", API_KEY);
 
 		try {
@@ -109,11 +111,10 @@ public class Util {
 		restTemplate = new RestTemplate();
 		url = "https://kr.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-puuid/" + puuid;
 		headers = new HttpHeaders();
-		headers.set("User-Agent",
-				"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36");
-		headers.set("Accept-Language", "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7");
-		headers.set("Accept-Charset", "https://developer.riotgames.com");
-		headers.set("Origin", "https://developer.riotgames.com");
+		headers.set("User-Agent",UserAgent);
+		headers.set("Accept-Language", AcceptLanguage);
+		headers.set("Accept-Charset", AcceptCharset);
+		headers.set("Origin", Origin);
 		headers.set("X-Riot-Token", API_KEY);
 
 		try {
@@ -148,11 +149,10 @@ public class Util {
 		url = "https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/" + search.getPuuid() + "/ids?start=" +  search.getStart() + "&count="
 				+ search.getCount();
 		headers = new HttpHeaders();
-		headers.set("User-Agent",
-				"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36");
-		headers.set("Accept-Language", "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7");
-		headers.set("Accept-Charset", "application/x-www-form-urlencoded; charset=UTF-8");
-		headers.set("Origin", "https://developer.riotgames.com");
+		headers.set("User-Agent",UserAgent);
+		headers.set("Accept-Language", AcceptLanguage);
+		headers.set("Accept-Charset", AcceptCharset);
+		headers.set("Origin", Origin);
 		headers.set("X-Riot-Token", API_KEY);
 
 		try {
@@ -182,16 +182,16 @@ public class Util {
 	}
 
 	public Match getMatch(String matchid) {
+		System.out.println(matchid);
 		Match match = null;
 		restTemplate = new RestTemplate();
 		matchID = matchid;
 		url = "https://asia.api.riotgames.com/lol/match/v5/matches/" + matchID;
 		headers = new HttpHeaders();
-		headers.set("User-Agent",
-				"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36");
-		headers.set("Accept-Language", "kko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7");
-		headers.set("Accept-Charset", "application/x-www-form-urlencoded; charset=UTF-8");
-		headers.set("Origin", "https://developer.riotgames.com");
+		headers.set("User-Agent",UserAgent);
+		headers.set("Accept-Language", AcceptLanguage);
+		headers.set("Accept-Charset", AcceptCharset);
+		headers.set("Origin", Origin);
 		headers.set("X-Riot-Token", API_KEY);
 
 		try {
@@ -211,6 +211,8 @@ public class Util {
 		} catch (Exception e) {
 			// Handle other exceptions
 			System.err.println("Error: " + e.getMessage());
+			
+			System.out.println("오류 2번 입니다");
 			// Additional error handling code here
 		}
 
@@ -223,13 +225,12 @@ public class Util {
 		MatchTimeLine matchTimeLine = null;
 		restTemplate = new RestTemplate();
 		matchID = matchid;
-		url = "https://asia.api.riotgames.com/lol/match/v5/matches/" + matchID + "/timeline";
+	    url = "https://asia.api.riotgames.com/lol/match/v5/matches/" + matchID + "/timeline";
 		headers = new HttpHeaders();
-		headers.set("User-Agent",
-				"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36");
-		headers.set("Accept-Language", "kko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7");
-		headers.set("Accept-Charset", "application/x-www-form-urlencoded; charset=UTF-8");
-		headers.set("Origin", "https://developer.riotgames.com");
+		headers.set("User-Agent",UserAgent);
+		headers.set("Accept-Language", AcceptLanguage);
+		headers.set("Accept-Charset", AcceptCharset);
+		headers.set("Origin", Origin);
 		headers.set("X-Riot-Token", API_KEY);
 
 		try {

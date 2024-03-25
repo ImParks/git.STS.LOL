@@ -9,5 +9,5 @@ public class SearchDto {
 	private String userTag = "";
 	private String puuid;
 	private int start = 0;
-	private int count = 20;
+	private int count = 1;
 }

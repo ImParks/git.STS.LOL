@@ -19,7 +19,7 @@ public class Info {
     private String gameType;
     private String gameVersion;
     private Integer mapId;
-    private List<Object> participants;
+    private List<Participant> participants;
     private String platformId;
     private Integer queueId;
     private List<Team> teams;

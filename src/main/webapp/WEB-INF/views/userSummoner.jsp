@@ -39,21 +39,24 @@
 							<c:choose>
 								<hr>
 								<c:when test="${queue == 1}">
-									<div id="solo">솔로랭크</div>
+									<div class="solo">솔로랭크</div>
 								</c:when>
 								<c:when test="${queue == 2}">
-									<div id="flex">자유랭크</div>
+									<div class="flex">자유랭크</div>
 								</c:when>
 								<c:when test="${queue == 0}">
 									<div class="unranked">Unranked</div>
 								</c:when>
 							</c:choose>
 						</c:forEach>
-						<div id="paging">여기에 시즌 판수 등 넣어둘꺼 아직은 안넣음</div>
+						<div class="paging">여기에 시즌 판수 등 넣어둘꺼 아직은 안넣음</div>
 					</div>
 					<div class="content">
 						<div class="contentHeader">큐타입 설정하는거 만들곳</div>
 						<div class="matchInfoList">
+
+
+
 							<c:forEach var="matchInfo" items="${Match}">
 								<div class="matchLog">
 									<div class="matchLeft">
@@ -88,23 +91,37 @@
 													</div>
 												</div>
 											</div>
-											<div class ="matchMideTopRight">
-											<p class="killInvolvementRate"></p>
-											<p class="perMinuteCS"></p>
-											<p class="gameRankTier"></p>
+											<div class="matchMideTopRight">
+												<p class="killInvolvementRate"></p>
+												<p class="perMinuteCS"></p>
+												<p class="gameRankTier"></p>
 											</div>
 										</div>
-										<div id="mideBot">
-										<div id="itemList">
-											<div class="item_1"></div>
-											<div class="item_2"></div>
-											<div class="item_3"></div>
-											<div class="item_4"></div>
-											<div class="item_5"></div>
-											<div class="item_6"></div>
-											<div class="accessories"></div>
+										<div class="mideBot">
+											<div class="itemList">
+												<div class="item_1"></div>
+												<div class="item_2"></div>
+												<div class="item_3"></div>
+												<div class="item_4"></div>
+												<div class="item_5"></div>
+												<div class="item_6"></div>
+												<div class="accessories"></div>
 											</div>
 										</div>
+									</div>
+									<div class="matchRight">
+										<c:forEach var="matchTeam" items="${matchInfo.getInfo().getParticipants()}">
+											<c:if test="${matchTeam.getTeamId() == 100}}">
+												<div class="teamList">
+													${matchTeam.getRiotIdGameName()}
+												</div>
+											</c:if>
+											<c:if test="${matchTeam.teamId == 200}">
+												<div class="teamRight">
+												${matchTeam.getRiotIdGameName()}
+												</div>
+											</c:if>
+										</c:forEach>
 									</div>
 								</div>
 							</c:forEach>

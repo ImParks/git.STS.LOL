@@ -6,12 +6,12 @@ import lombok.Data;
 @Data
 public class Objectives {
 
-	private Baron baron;
-	private Champion champion;
-	private Dragon dragon;
-	private Horde horde;
-	private Inhibitor inhibitor;
-	private RiftHerald riftHerald;
-	private Tower tower;
+	private Objective baron;
+	private Objective champion;
+	private Objective dragon;
+	private Objective horde;
+	private Objective inhibitor;
+	private Objective riftHerald;
+	private Objective tower;
 
 }
