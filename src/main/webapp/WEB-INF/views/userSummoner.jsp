@@ -59,6 +59,7 @@
 
 							<c:forEach var="matchInfo" items="${Match}">
 								<div class="matchLog">
+								<div class="matchBox">
 									<div class="matchLeft">
 										<div class="matchLeftTop">게임종류 + 몇시에 했는지</div>
 										<div class="matchLeftBot">승패 + 게임을 얼마나 했는지</div>
@@ -122,6 +123,18 @@
 												</div>
 											</c:if>
 										</c:forEach>
+									</div>
+									<div class = "matchInfoSidebar">
+										누르면 아래에 창이 생겨야함
+									</div>
+									</div>
+									<div class = "matchDetailedInfo">
+									<div class = "detailedList">
+									<div class = "detailedInfo">종합</div>
+									<div class = "detailedInfo">팀분석</div>
+									<div class = "detailedInfo">빌드</div>
+									<div class = "timeLog">etc</div>
+									</div>
 									</div>
 								</div>
 							</c:forEach>
